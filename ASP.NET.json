@@ -1,0 +1,49 @@
+{
+    "id": "ASP",
+    "description": "desc",
+    "version": "1.0",
+    "components": "com.blazemeter.jmeter.correlation.siebel.SiebelCounterCorrelationReplacement,\ncom.blazemeter.jmeter.correlation.siebel.SiebelRowCorrelationExtractor,\ncom.blazemeter.jmeter.correlation.siebel.SiebelRowIdCorrelationReplacement,\ncom.blazemeter.jmeter.correlation.siebel.SiebelRowParamsCorrelationReplacement",
+    "responseFilters": "text/html",
+    "rules": [
+        {
+            "referenceName": "FORM_EVENTTARGET"
+        },
+        {
+            "referenceName": "FORM_VIEWSTATE"
+        },
+        {
+            "referenceName": "FORM_EVENTVALIDATION"
+        },
+        {
+            "referenceName": "FORM_EVENTARGUMENT"
+        },
+        {
+            "referenceName": "WebResource.axd"
+        },
+        {
+            "referenceName": "ScriptResource.axd"
+        },
+        {
+            "referenceName": "__VIEWSTATE"
+        },
+        {
+            "referenceName": "__EVENTVALIDATION"
+        },
+        {
+            "referenceName": "__EVENTTARGET"
+        },
+        {
+            "referenceName": "__EVENTARGUMENT"
+        },
+        {
+            "referenceName": "|__VIEWSTATE|"
+        },
+        {
+            "referenceName": "|__EVENTVALIDATION|"
+        },
+        {
+            "referenceName": "JSession"
+        }
+    ],
+    "repositoryId": "local"
+}
