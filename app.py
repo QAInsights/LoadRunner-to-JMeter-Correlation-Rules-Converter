@@ -14,13 +14,31 @@ def main():
         group_name = group.attrib['Name']
 
     
+    # Boiler Plate
     create_jmeter_rule(group_name)
+    # Create Rules
     fetch_rules(root, group_name)
-
+    # Create Repository File
+    create_repository(group_name, version)
     # Reverting the file name
     lr_cor_file = "./LR.cor"
     lr_cor_file_renamed = "./LR.xml"
     os.rename(lr_cor_file_renamed, lr_cor_file)
+
+def create_repository(group_name, version="1.0"):
+    data = {
+        group_name : {
+            "versions": [
+                version
+            ]
+        }
+    }
+    repository_file_name = group_name + '-repository.json'
+
+    with open(repository_file_name,"w+") as f:
+        json.dump(data, f)
+    f.close()
+    print("Repository file created", repository_file_name)
 
 def create_jmeter_rule(group_name):
     '''
@@ -65,24 +83,34 @@ def fetch_rules(root, group_name):
         
         json_file_name = group_name + '.json'
         print(json_file_name)
-        add_rules_to_json(json_file_name, rule_name)
+
+        add_rules_to_json(json_file_name, rule_name,full_regex)
         print(full_regex)
 
     return
 
-def add_rules_to_json(json_file_name, rule_name):
+def add_rules_to_json(json_file_name, rule_name,full_regex):
     print("Add rules", json_file_name)
     with open(json_file_name) as json_file:        
         data = json.load(json_file)
-        print(data['rules'])        
+        print(data['rules'])  
+        # Adding Rules Ref names
         rules_data = {
-            'referenceName': rule_name
+            'referenceName': rule_name,
+            'correlationExtractor' : {
+                'type' : 'com.blazemeter.jmeter.correlation.core.extractors.RegexCorrelationExtractor',
+                'regex' : full_regex,
+                'matchNr': 1
+            },
+            'correlationReplacement' : {
+                'type': 'com.blazemeter.jmeter.correlation.core.replacements.RegexCorrelationReplacement',
+                'regex' : ''
+            }
         }
-        print(rules_data)
+        #print(rules_data)
         temp = data['rules']
         temp.append(rules_data)
-        #data['rules'].append(rules_data)       
-    
+       
     write_json(data, json_file_name)
 
     return
