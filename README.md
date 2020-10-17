@@ -7,3 +7,30 @@
 
 # LoadRunner to JMeter Correlation Rules Converter 🛠
 
+## TLDR ⚡
+
+From *.cor to *.json. Period.
+
+## Overview 💡
+
+This is a simple Python utility which will help you to convert your LoadRunner Correlation Rules to JMeter Correlation Rules.
+
+## Prerequisites 🚩
+
+* LoadRunner Correlation Rules (*.cor)
+* JMeter Plugin Manager w/ Blazemeter's Correlation Recorder plugin
+* Python
+
+## How to use this repository? 🏃‍♂️
+
+* Clone this repo
+* Install the dependencies using
+`pip install -r requirements.txt`
+* cd into the repo
+* Issue the below command:  
+`python app.py -f <your-LoadRunner-Correlation-File>`  
+e.g. `python app.py -f LR.cor`
+* It will prompt to enter the details, if you are lazy 🐢 like me just keep hitting the enter key. After few hits, you will get a template and repository JSON as shown below.  
+
+![Output](/assets/Output.jpg)
+
