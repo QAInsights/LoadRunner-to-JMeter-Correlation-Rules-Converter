@@ -15,4 +15,7 @@
         <Rule Name="|__EVENTVALIDATION|" LeftBoundText="|hiddenField|__EVENTVALIDATION|" LeftBoundType="1" LeftBoundInstance="0" RightBoundText="|" RightBoundType="1" AltRightBoundText="" AltRightBoundType="1" Flags="8" ParamPrefix="AspNet_EventValidation" Type="8" SaveOffset="0" SaveLen="-1" CallbackName="" CallbackDLLName="" FormField="" ReplaceLB="" ReplaceRB=""/>
         <Rule Name="JSession" LeftBoundText="jsessionid=(.*?)&quot;&gt;Sign\ In" LeftBoundType="1" LeftBoundInstance="0" RightBoundText="" RightBoundType="1" AltRightBoundText="" AltRightBoundType="1" Flags="32768" ParamPrefix="" Type="8" SaveOffset="0" SaveLen="-1" CallbackName="" CallbackDLLName="" FormField="" ReplaceLB="" ReplaceRB=""/>
     </Group>
+     <Group Name="ASP.NET1" Enable="1" Icon="logo_aspnet.bmp">
+        <Rule Name="JSession" LeftBoundText="jsessionid=(.*?)&quot;&gt;Sign\ In" LeftBoundType="1" LeftBoundInstance="0" RightBoundText="" RightBoundType="1" AltRightBoundText="" AltRightBoundType="1" Flags="32768" ParamPrefix="" Type="8" SaveOffset="0" SaveLen="-1" CallbackName="" CallbackDLLName="" FormField="" ReplaceLB="" ReplaceRB=""/>
+    </Group>
 </CorrelationSettings>
