@@ -54,7 +54,7 @@ After generating the JSON files, you have to follow the below steps to utilize i
 
 ![20-Repo-Manage](/assets/20-Repo-Manager.jpg)
 
-* If all is well, you will get below success message.
+* If all is well, you will get the below success message.
 
 ![30-Repo-Success](/assets/30-Repo-Success.jpg)
 
