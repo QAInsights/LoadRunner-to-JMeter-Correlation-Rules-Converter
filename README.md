@@ -19,7 +19,7 @@ This is a simple Python utility which will help you to convert your LoadRunner C
 
 * LoadRunner Correlation Rules (*.cor)
 * JMeter Plugin Manager w/ Blazemeter's Correlation Recorder plugin
-* Python
+* Python 🐍
 
 ## How to use this repository? 🏃‍♂️
 
@@ -33,4 +33,19 @@ e.g. `python app.py -f LR.cor`
 * It will prompt to enter the details, if you are lazy 🐢 like me just keep hitting the enter key. After few hits, you will get a template and repository JSON as shown below.  
 
 ![Output](/assets/Output.jpg)
+
+## Aftermath 🌪
+
+After generating the JSON files, you have to follow the below steps to utilize it in JMeter.
+
+* Create a 
+
+## Tested with 🔨
+
+This utility has been tested with:
+
+* Micro Focus LoadRunner 2020 SP 2
+* Apache JMeter 5.3
+* Blazemeter Correlation Recorder 1.1
+
 

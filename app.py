@@ -57,7 +57,7 @@ def main():
         # Create Rules
         fetch_rules(root, group_name,get_id, get_version)
         # Create Repository File
-        create_repository(get_id, get_version)
+        create_repository(get_id, get_version, group_name)
 
         # Reverting the file name
         lr_cor_file = lr_cor_file_renamed 
@@ -68,7 +68,7 @@ def main():
     except FileNotFoundError as e:
         print_message(e, message_color="red")
 
-def create_repository(get_id, get_version):
+def create_repository(get_id, get_version, group_name):
     """
     Creating a repository for the rules
     """
@@ -79,8 +79,8 @@ def create_repository(get_id, get_version):
             ]
         }
     }
-    repository_file_name = get_id + '-repository.json'
-
+    repository_file_name = group_name + '/' + get_id + '-repository.json'
+    os.makedirs(os.path.dirname(repository_file_name), exist_ok=True)
     with open(repository_file_name,"w+") as f:
         json.dump(data, f)
     f.close()
@@ -111,8 +111,8 @@ def create_jmeter_rule(group_name,get_id, get_description, get_version, get_comp
         "repositoryId": "local"
     }
     
-    json_file_name = get_id + '-' + get_version + '-template' + '.json'
-    
+    json_file_name = group_name + '/' + get_id + '-' + get_version + '-template' + '.json'
+    os.makedirs(os.path.dirname(json_file_name))
     # Create JSON File
     with open(json_file_name,"w+") as f:
         json.dump(data, f)
@@ -144,9 +144,9 @@ def fetch_rules(root, group_name, get_id, get_version):
         regex = "(.+?)"
         # Complete Regex
         full_regex = corr_extractor_lb + regex + corr_extractor_rb
-        json_file_name = get_id + '-' + get_version + '-template' + '.json'
+        json_file_name = group_name + '/' + get_id + '-' + get_version + '-template' + '.json'
         # Adding each rule to the json
-        add_rules_to_json(json_file_name, rule_name,full_regex)
+        add_rules_to_json(json_file_name, rule_name, full_regex)
         #print(full_regex)
 
     return
