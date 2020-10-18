@@ -1,5 +1,5 @@
 {
-    "id": "myrules",
+    "id": "PetStore-Rules",
     "description": "1.0",
     "version": "1.0",
     "components": "com.blazemeter.jmeter.correlation.siebel.SiebelCounterCorrelationReplacement",
